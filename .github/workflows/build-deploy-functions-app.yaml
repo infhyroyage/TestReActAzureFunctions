@@ -39,5 +39,5 @@ jobs:
         with:
           app-name: test-react-azure-functions
           package: .
-          scm-do-build-during-deployment: true
-          enable-oryx-build: true
+          # scm-do-build-during-deployment: true
+          # enable-oryx-build: true
