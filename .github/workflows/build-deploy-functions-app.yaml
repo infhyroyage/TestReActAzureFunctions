@@ -24,6 +24,11 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
+      - name: Create and Start Virtual Environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
