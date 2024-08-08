@@ -10,6 +10,11 @@ from langchain_openai import AzureChatOpenAI
 app = func.FunctionApp()
 
 
+@app.route(route="healthcheck", auth_level=func.AuthLevel.FUNCTION, methods=["GET"])
+def health_check(req: func.HttpRequest) -> func.HttpResponse:
+    return func.HttpResponse("OK", status_code=200)
+
+
 @app.route(route="react", auth_level=func.AuthLevel.FUNCTION, methods=["POST"])
 def react(req: func.HttpRequest) -> func.HttpResponse:
     llm = AzureChatOpenAI(
